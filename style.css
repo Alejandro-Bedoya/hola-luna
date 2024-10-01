@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00ffee;
+}
+
+html{
+    font-size: 60%;
+    overflow: hidden;
+    overflow: auto; /* Asegúrate de que esto esté configurado */
+    height: auto; /* Permite que la altura sea determinada por el contenido */
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px; /* Ajuste base para el tamaño del texto */
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background: rgb(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover, 
+.navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section {
+    min-height: 100vh; /* Asegúrate de que cada sección ocupe al menos toda la altura de la ventana */
+    padding: 10rem 12%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre los elementos para alinear imagen y contenido */
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el texto a la izquierda */
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem; /* Agregado margen superior para separar del párrafo */
+}
+
+.btn-group a:nth-of-type(2) {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+
+.home-img {
+    border-radius: 50%;
+    display: flex; /* Asegura que la imagen esté alineada correctamente */
+    justify-content: flex-end; /* Imagen alineada a la derecha */
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span:hover{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    top{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Fronted Designer";
+    }
+    21%,
+    40%{
+        content: "Web Designer";
+    }
+    41%,
+    60%{
+        content: "UI / UX Designer";
+    }
+    61%,
+    80%{
+        content: "Web Developer";
+    }
+    81%,
+    100%{
+        content: "Software Tester";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+
+
+/* --- CARTA ---*/
+.carta {
+    background: var(--second-bg-color);
+    padding: 5rem 12%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.carta-content {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.carta-content h2 {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.carta-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.carta-content p:last-of-type {
+    text-align: right;
+    font-style: italic;
+}
+
+/* -- RESPONSIVE -- */
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondemos el menú fuera de la pantalla */
+        height: 100vh;
+        width: 60%;
+        background: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease;
+    }
+
+    .navbar.active {
+        right: 0; /* Mostramos el menú cuando se activa */
+    }
+
+    .navbar a {
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: var(--main-color);
+        display: block;
+    }
+
+    /* Estilos para el ícono del menú hamburguesa */
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 3.5rem;
+        position: absolute;
+        top: 4rem;
+        right: 3rem;
+    }
+
+    /* Ocultamos el menú completo en pantallas pequeñas */
+    .navbar a {
+        display: none;
+    }
+
+    .navbar.active a {
+        display: block; /* Mostramos los enlaces cuando el menú está activo */
+    }
+
+    .home {
+        flex-direction: column; /* Colocar la imagen debajo del contenido en pantallas pequeñas */
+        gap: 3rem;
+    }
+
+    .home-content {
+        text-align: center; /* Centramos el contenido */
+        align-items: center; /* Ajustamos para pantallas pequeñas */
+    }
+
+    .home-content h1 {
+        font-size: 4rem; /* Reducimos el tamaño del título */
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem; /* Ajustamos el tamaño del texto */
+    }
+
+    .btn {
+        font-size: 1.4rem; /* Botones más pequeños */
+        padding: 1rem 2rem;
+    }
+
+    .btn-group {
+        flex-direction: column; /* Botones en columna en lugar de fila */
+        gap: 1rem;
+    }
+
+    .home-img img {
+        width: 60vw; /* Imagen más pequeña en móviles */
+        top: 0;
+    }
+
+    /* Ajustes para la sección de la carta */
+    .letter-section h2 {
+        font-size: 3rem; /* Ajustamos el tamaño del título */
+        text-align: center;
+    }
+
+    .letter-section p {
+        font-size: 1.4rem; /* Texto de la carta más pequeño */
+        max-width: 90%; /* Reducimos el ancho de la carta */
+        text-align: center;
+    }
+}
+
+/* Pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .letter-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .letter-section p {
+        font-size: 1.2rem;
+    }
+}
