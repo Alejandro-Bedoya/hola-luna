@@ -303,7 +303,6 @@ span {
 }
 
 /* -- RESPONSIVE -- */
-/* Pantallas pequeñas (teléfonos) */
 @media (max-width: 768px) {
     .navbar {
         position: fixed;
@@ -520,7 +519,6 @@ span {
 }
 
 /* Modo responsive */
-/* Modo responsive */
 @media (max-width: 768px) {
     .timeline-items {
         display: block; /* Apilar los elementos verticalmente */
@@ -564,5 +562,253 @@ span {
         height: 100%;
         left: 30px; /* Mantener la línea central en dispositivos móviles */
         transform: none; /* No transformar la posición de la línea */
+    }
+}
+
+
+/* Comparative Section */
+#comparativo {
+    margin: 10rem auto; /* Centramos horizontalmente */
+    width: 95%; /* Ajustamos el ancho para que no ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: var(--second-bg-color);
+    padding: 4rem;
+    border-radius: 15px;
+}
+
+.comparativo-title {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 100%;
+}
+
+.mejoras, .errores {
+    width: 45%;
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.mejoras h2, .errores h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mejoras ul, .errores ul {
+    list-style: none;
+}
+
+.mejoras li, .errores li {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design for Comparativa */
+@media (max-width: 768px) {
+    #comparativo {
+        width: 90%;  /* Ajustar ancho en pantallas pequeñas */
+        margin: 12rem 5%;  /* Margen reducido en pantallas pequeñas */
+        padding: 2rem;  /* Reducir padding */
+    }
+
+    .comparativo-title {
+        font-size: 2.5rem;  /* Reducir tamaño del título */
+    }
+
+    .comparison-container {
+        flex-direction: column;  /* Cambiar de fila a columna */
+        gap: 3rem;
+    }
+
+    .mejoras, .errores {
+        width: 100%;  /* Ajustar ancho completo en pantallas pequeñas */
+    }
+
+    .mejoras h2, .errores h2 {
+        font-size: 2rem;  /* Reducir tamaño de subtítulos */
+    }
+
+    .mejoras li, .errores li {
+        font-size: 1.6rem;  /* Reducir tamaño de texto */
+    }
+}
+
+/* AUDIO Y VIDEO */
+section {
+    padding: 12rem 10% 4rem;
+    background-color: var(--second-bg-color); /* Cambiar el fondo a un color diferente */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+audio, video {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    width: 100%; 
+    max-width: 640px; 
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--main-color); 
+    box-shadow: 0 0 20px var(--main-color); 
+    transition: 0.3s ease-in-out;
+}
+
+.content img:hover {
+    box-shadow: 0 0 35px var(--main-color); 
+    transform: scale(1.05); 
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+    .content img {
+        max-width: 30%; /* Reducir el tamaño de las imágenes solo en pantallas grandes */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 14rem 5% 4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    audio, video {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* SERVICES */
+/* Estilo para la sección de servicios */
+.services {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 4rem 2rem;
+}
+
+.services h2 {
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Diseño de la cuadrícula */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.service-box {
+    background-color: var(--second-bg-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Cambia el color a negro al pasar el cursor */
+.service-box:hover {
+    background-color: black; /* Cambia el color a negro */
+    transform: scale(1.05);
+}
+
+/* Información de los servicios */
+.service-info h4 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.service-info p {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-box {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .service-info h4 {
+        font-size: 1.8rem;
+    }
+
+    .service-info p {
+        font-size: 1.3rem;
+        text-align: justify; /* Distribuye el texto mejor */
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 480px) {
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .service-box {
+        padding: 1rem;
+    }
+
+    .service-info h4 {
+        font-size: 1.6rem;
+    }
+
+    .service-info p {
+        font-size: 1.2rem;
     }
 }
