@@ -272,6 +272,7 @@ span {
     align-items: center;
     justify-content: center;
     color: var(--text-color);
+    margin-top: 0rem;
 }
 
 .carta-content {
@@ -810,5 +811,142 @@ audio, video {
 
     .service-info p {
         font-size: 1.2rem;
+    }
+}
+
+
+/* Estilos Cumpleaños */
+.birthday-section {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.birthday-section .heading {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.birthday-section .birthday-message {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.birthday-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.birthday-item img,
+.birthday-item video,
+.birthday-item audio {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.birthday-item video,
+.birthday-item audio {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Modo responsive */
+@media (max-width: 768px) {
+    .birthday-section .heading {
+        font-size: 2.5rem;
+    }
+
+    .birthday-section .birthday-message {
+        font-size: 1.4rem;
+    }
+
+    .birthday-item img,
+    .birthday-item video,
+    .birthday-item audio {
+        width: 90%;
+    }
+}
+
+/* SECCION FECHA */
+/* Estilo general */
+.countdown-section {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+
+.countdown-section .heading {
+    color: var(--main-color);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias filas */
+}
+
+.time-box {
+    background: var(--second-bg-color);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.time-box p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.countdown-message {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-top: 2rem;
+    font-style: italic;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .countdown-timer {
+        flex-direction: column;
+        align-items: center; /* Alinea los elementos en el centro */
+        gap: 1.5rem;
+    }
+
+    .time-box {
+        width: 100px;
+        padding: 1.2rem;
+    }
+
+    .countdown-section .heading {
+        font-size: 2.4rem;
     }
 }
